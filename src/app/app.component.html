@@ -1,17 +1,1 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <input [(ngModel)]="firstValue">
-  <input [(ngModel)]="secondValue">
-  <h3>
-    <input type="radio" [(ngModel)]="calcExp" value="+"/>+
-    <br />
-    <input type="radio" [(ngModel)]="calcExp" value="-"/>-
-    <br />
-    <input type="radio" [(ngModel)]="calcExp" value="*"/>*
-    <br />
-    <input type="radio" [(ngModel)]="calcExp" value="/"/>/
-  </h3>
-  <h1>
-    {{firstValue}} {{calcExp}} {{secondValue}} = {{calculate()}}
-  </h1>
-</div>
+<app-video *ngFor="let video of videos" [video]="video"></app-video>

@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Video} from './videos/shared/video.model';
 
 @Component({
   selector: 'app-root',
@@ -6,25 +7,15 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  firstValue = 0;
-  secondValue = 0;
-  calcExp = '+';
 
+  videos: Video[];
 
-  calculate() {
-    switch (this.calcExp) {
-      case '+':
-        return this.firstValue * 1 + this.secondValue * 1;
-      case '-':
-        return this.firstValue * 1 - this.secondValue * 1;
-      case '*':
-        return this.firstValue * 1 * this.secondValue * 1;
-      case '/':
-        return this.firstValue * 1 / this.secondValue * 1;
-      default:
-        return this.firstValue * 1 + this.secondValue * 1;
-    }
-
+  constructor() {
+    this.videos = [
+      {name: 'Video One', price: 100},
+      {name: 'Video Two', price: 200},
+      {name: 'Video Three', price: 300}
+    ];
   }
 }
 
