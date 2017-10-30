@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Video} from './videos/shared/video.model';
+import {VideoService} from "./videos/shared/video.service";
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,8 @@ export class AppComponent {
 
   videos: Video[];
 
-  constructor() {
-    this.videos = [
-      {name: 'Video One', price: 100},
-      {name: 'Video Two', price: 200},
-      {name: 'Video Three', price: 300}
-    ];
+  constructor(private videoService : VideoService) {
+    this.videos = videoService.getVideos()
   }
 }
 
